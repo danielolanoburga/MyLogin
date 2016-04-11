@@ -13,7 +13,7 @@
         android:src="@drawable/pinterest_logo"
         android:layout_width="220dp"
         android:layout_height="80dp"
-        android:layout_marginTop="-80dp"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="80dp"/>
 
     <EditText
@@ -52,5 +52,26 @@
             />
 
     </RelativeLayout>
+
+    <RelativeLayout android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/bSignUp"
+            android:text="SIGN UP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ad4a4f"
+            android:background="@color/colorBackgroundLogin"
+            android:layout_alignParentBottom="true"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>

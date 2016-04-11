@@ -19,7 +19,8 @@
         <activity
             android:name=".LoginFacebookActivity"
             android:label="@string/title_activity_login_facebook"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView tvUsername;
+    TextView tvUsername, tvName, tvLastName, tvEmail, tvBirthDate;
     Button bLogout;
 
     @Override
@@ -18,9 +18,21 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_welcome);
 
         String username = getIntent().getExtras().getString("etUsername");
+        String name = getIntent().getExtras().getString("etName");
+        String lastName = getIntent().getExtras().getString("etLastName");
+        String email = getIntent().getExtras().getString("etEmail");
 
         tvUsername = (TextView) findViewById(R.id.tvUsername);
         tvUsername.setText(username);
+        tvName = (TextView) findViewById(R.id.tvName);
+        tvName.setText(name);
+        tvLastName = (TextView) findViewById(R.id.tvLastname);
+        tvLastName.setText(lastName);
+        tvEmail = (TextView) findViewById(R.id.tvEmail);
+        tvEmail.setText(email);
+
+        tvBirthDate = (TextView) findViewById(R.id.tvBirthDate);
+        tvBirthDate.setText(getIntent().getExtras().getString("dpBirthDate"));
 
         bLogout = (Button) findViewById(R.id.bLogout);
         bLogout.setOnClickListener(this);

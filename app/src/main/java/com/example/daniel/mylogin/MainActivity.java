@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button bLogin;
+    Button bLogin, bSignUp;
     EditText etUsername, etPassword;
 
     private static final String REQUIRED_MSG = "The input field is required";
@@ -23,10 +23,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         bLogin = (Button) findViewById(R.id.bLogin);
+        bSignUp = (Button) findViewById(R.id.bSignUp);
 
         bLogin.setOnClickListener(this);
+        bSignUp.setOnClickListener(voDoneSignUp);
 
     }
+
+
+    View.OnClickListener voDoneSignUp = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        }
+    };
 
     @Override
     public void onClick(View v) {
@@ -36,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 // Validar inputs required
                 if(ValidateUtil.isValidate(etUsername) && ValidateUtil.isValidate(etPassword)){
-                    // Validar accesos
+                        // Validar accesos
                     if(etUsername.getText().toString().trim().equals("admin") && etPassword.getText().toString().trim().equals("admin")){
                         // Mostrar pantalla de Bienvenida
                         Intent intentLogin = new Intent(this, WelcomeActivity.class);
